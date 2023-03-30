@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NewArchi</name>
+    </assembly>
+    <members>
+        <member name="M:NewArchi.Api.BaseApiController.HandleValidationException(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Handles the validation exception by sending a 400 Bad Request if .
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+    </members>
+</doc>

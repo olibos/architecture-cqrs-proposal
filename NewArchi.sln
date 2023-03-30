@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewArchi", "NewArchi\NewArchi.csproj", "{3DBD0F39-B495-454B-B376-EC527D5E0F33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{EEB55791-8FAD-43FC-800C-FEA63F9BEED7}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		directory.build.props = directory.build.props
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "adr", "adr", "{327D9A90-E64E-4030-9AC1-936B30696C18}"
+	ProjectSection(SolutionItems) = preProject
+		docs\adr\adr-commentaires.md = docs\adr\adr-commentaires.md
+		docs\adr\adr-guard-clauses.md = docs\adr\adr-guard-clauses.md
+		docs\adr\adr-nommage-champs-prives.md = docs\adr\adr-nommage-champs-prives.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DBD0F39-B495-454B-B376-EC527D5E0F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBD0F39-B495-454B-B376-EC527D5E0F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBD0F39-B495-454B-B376-EC527D5E0F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBD0F39-B495-454B-B376-EC527D5E0F33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{327D9A90-E64E-4030-9AC1-936B30696C18} = {EEB55791-8FAD-43FC-800C-FEA63F9BEED7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8723FE94-A8BF-4C61-B078-8F311C5FAB6E}
+	EndGlobalSection
+EndGlobal
