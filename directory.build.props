@@ -3,7 +3,7 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+		<DocumentationFile>$(MSBuildProjectDirectory)\bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
 		<NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>
