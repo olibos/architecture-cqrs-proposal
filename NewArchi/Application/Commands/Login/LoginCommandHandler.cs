@@ -8,28 +8,30 @@ using Isopoh.Cryptography.Argon2;
 
 using MediatR;
 
-using NewArchi.Application;
-using NewArchi.Domain.Interfaces;
-using NewArchi.Domain.Models;
-using NewArchi.Domain.Responses;
-using NewArchi.Mappers;
+using Microsoft.EntityFrameworkCore;
 
-public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
+using NewArchi.Domain.Entities;
+using NewArchi.Services;
+
+using Riok.Mapperly.Abstractions;
+
+[Mapper]
+public partial class LoginCommandHandler : IRequestHandler<LoginCommand, LoginCommandResponse>
 {
-    private readonly IUserRepository _userRepository;
-    private readonly UserMapper _userMapper;
+    private readonly AppDbContext _appDbContext;
 
-    public LoginCommandHandler(IUserRepository userRepository, UserMapper userMapper)
+    public LoginCommandHandler(AppDbContext appDbContext)
     {
-        _userRepository = userRepository;
-        _userMapper = userMapper;
+        _appDbContext = appDbContext;
     }
 
-    public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
+    public async Task<LoginCommandResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetUserAsync(request.Username);
-        if (user == null || !Argon2.Verify(user.PasswordHash, request.Password)) return LoginResponse.BadCredentials;
+        var user = await _appDbContext.Users.SingleOrDefaultAsync(u => u.Username == request.Username);
+        if (user == null || !Argon2.Verify(user.PasswordHash, request.Password)) return LoginCommandResponse.BadCredentials;
 
-        return _userMapper.GetUserDto(user);
+        return Success(user);
     }
+
+    private partial SuccessResponse Success(User user);
 }

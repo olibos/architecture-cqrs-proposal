@@ -10,5 +10,17 @@
             </summary>
             <param name="context">The context.</param>
         </member>
+        <member name="T:NewArchi.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:NewArchi.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:NewArchi.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:NewArchi.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

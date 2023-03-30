@@ -2,22 +2,16 @@
 // Copyright (c) Wavenet. All rights reserved.
 // </copyright>
 
-#pragma warning disable SA1200 // Using directives should be placed correctly
-
 using MediatR.Extensions.FluentValidation.AspNetCore;
 
 using Microsoft.AspNetCore.Mvc.Controllers;
 
-using NewArchi.Domain.Interfaces;
-using NewArchi.Mappers;
 using NewArchi.Services;
-
-#pragma warning restore SA1200 // Using directives should be placed correctly
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssemblyContaining<Program>();
@@ -33,9 +27,7 @@ builder.Services.AddSwaggerGen(options =>
         return $"{actionDescriptor.ControllerName}_{actionDescriptor.ActionName}";
     });
 });
-builder.Services
-       .AddSingleton<UserMapper>()
-       .AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
 

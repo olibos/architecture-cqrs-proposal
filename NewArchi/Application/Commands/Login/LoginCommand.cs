@@ -6,6 +6,4 @@ namespace NewArchi.Application.Commands.Login;
 
 using MediatR;
 
-using NewArchi.Domain.Responses;
-
-public record LoginCommand(string Username, string Password) : IRequest<LoginResponse>;
+public record LoginCommand(string Username, string Password) : IRequest<LoginCommandResponse>;

@@ -4,8 +4,9 @@
 
 namespace NewArchi.Domain.Interfaces;
 
-using NewArchi.Domain.Models;
+using NewArchi.Domain.Entities;
 
+[Obsolete("Accès direct dans le handler au DbContext - Attention Moq")]
 public interface IUserRepository
 {
     Task<User?> GetUserAsync(string username);

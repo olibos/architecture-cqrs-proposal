@@ -9,9 +9,10 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 using NewArchi.Application.Commands.Login;
-using NewArchi.Domain.ResponseModels;
 
 using Swashbuckle.AspNetCore.Annotations;
+
+using LoginResponse = NewArchi.Application.Commands.Login.SuccessResponse;
 
 [Route("/api/user")]
 public class UserController : BaseApiController
@@ -24,15 +25,15 @@ public class UserController : BaseApiController
     }
 
     [HttpPost]
-    [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(LoginResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [SwaggerOperation(Description = "Test user: olibos Password: Bos")]
-    public async Task<ActionResult<UserDto>> Login([FromBody] LoginCommand request)
+    public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginCommand request)
     {
         var response = await _sender.Send(request);
         return response.Match(
-            user => new ActionResult<UserDto>(user),
+            user => new ActionResult<LoginResponse>(user),
             invalid => this.Unauthorized());
     }
 }
