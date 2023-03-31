@@ -1,6 +1,6 @@
 # Convention de nommage pour les champs privés en C#
 ## Contexte
-On a remarqué que les convotions de nommage ont évolué et que le champs privés sont de moins en moins écrit en camel case.
+On a remarqué que les conventions de nommage ont évolué et que le champs privés sont de moins en moins écrit en camel case.
 
 Les noms de variables en camel case peuvent facilement entrer en conflit avec les variables locales, ce qui peut causer de la confusion et des erreurs. 
 
@@ -21,4 +21,4 @@ Cette convention de nommage est conforme aux recommandations de Microsoft pour l
 L'adoption de cette convention de nommage permettra une meilleure lisibilité et une compréhension plus facile du code par les membres de l'équipe de développement. Cela réduira également le risque d'erreurs liées à une mauvaise interprétation des noms de champs privés.
 
 ## Références
-- [Microsoft's C# Coding Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+- [Microsoft's C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions#camel-case)
